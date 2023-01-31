@@ -16,8 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TimerSetScreenState {
-  double get workingPrice =>
-      throw _privateConstructorUsedError; // @Default(0) int workingTime,
+  double get workingPrice => throw _privateConstructorUsedError;
   TimeOfDay get workingTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -64,25 +63,22 @@ class _$TimerSetScreenStateCopyWithImpl<$Res, $Val extends TimerSetScreenState>
 }
 
 /// @nodoc
-abstract class _$$_WeatherForecastPanelStateCopyWith<$Res>
+abstract class _$$_TimerSetScreenStateCopyWith<$Res>
     implements $TimerSetScreenStateCopyWith<$Res> {
-  factory _$$_WeatherForecastPanelStateCopyWith(
-          _$_WeatherForecastPanelState value,
-          $Res Function(_$_WeatherForecastPanelState) then) =
-      __$$_WeatherForecastPanelStateCopyWithImpl<$Res>;
+  factory _$$_TimerSetScreenStateCopyWith(_$_TimerSetScreenState value,
+          $Res Function(_$_TimerSetScreenState) then) =
+      __$$_TimerSetScreenStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({double workingPrice, TimeOfDay workingTime});
 }
 
 /// @nodoc
-class __$$_WeatherForecastPanelStateCopyWithImpl<$Res>
-    extends _$TimerSetScreenStateCopyWithImpl<$Res,
-        _$_WeatherForecastPanelState>
-    implements _$$_WeatherForecastPanelStateCopyWith<$Res> {
-  __$$_WeatherForecastPanelStateCopyWithImpl(
-      _$_WeatherForecastPanelState _value,
-      $Res Function(_$_WeatherForecastPanelState) _then)
+class __$$_TimerSetScreenStateCopyWithImpl<$Res>
+    extends _$TimerSetScreenStateCopyWithImpl<$Res, _$_TimerSetScreenState>
+    implements _$$_TimerSetScreenStateCopyWith<$Res> {
+  __$$_TimerSetScreenStateCopyWithImpl(_$_TimerSetScreenState _value,
+      $Res Function(_$_TimerSetScreenState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -91,7 +87,7 @@ class __$$_WeatherForecastPanelStateCopyWithImpl<$Res>
     Object? workingPrice = null,
     Object? workingTime = null,
   }) {
-    return _then(_$_WeatherForecastPanelState(
+    return _then(_$_TimerSetScreenState(
       workingPrice: null == workingPrice
           ? _value.workingPrice
           : workingPrice // ignore: cast_nullable_to_non_nullable
@@ -106,15 +102,14 @@ class __$$_WeatherForecastPanelStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_WeatherForecastPanelState implements _WeatherForecastPanelState {
-  const _$_WeatherForecastPanelState(
+class _$_TimerSetScreenState implements _TimerSetScreenState {
+  const _$_TimerSetScreenState(
       {this.workingPrice = 0,
       this.workingTime = const TimeOfDay(hour: 0, minute: 0)});
 
   @override
   @JsonKey()
   final double workingPrice;
-// @Default(0) int workingTime,
   @override
   @JsonKey()
   final TimeOfDay workingTime;
@@ -128,7 +123,7 @@ class _$_WeatherForecastPanelState implements _WeatherForecastPanelState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WeatherForecastPanelState &&
+            other is _$_TimerSetScreenState &&
             (identical(other.workingPrice, workingPrice) ||
                 other.workingPrice == workingPrice) &&
             (identical(other.workingTime, workingTime) ||
@@ -141,22 +136,22 @@ class _$_WeatherForecastPanelState implements _WeatherForecastPanelState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WeatherForecastPanelStateCopyWith<_$_WeatherForecastPanelState>
-      get copyWith => __$$_WeatherForecastPanelStateCopyWithImpl<
-          _$_WeatherForecastPanelState>(this, _$identity);
+  _$$_TimerSetScreenStateCopyWith<_$_TimerSetScreenState> get copyWith =>
+      __$$_TimerSetScreenStateCopyWithImpl<_$_TimerSetScreenState>(
+          this, _$identity);
 }
 
-abstract class _WeatherForecastPanelState implements TimerSetScreenState {
-  const factory _WeatherForecastPanelState(
+abstract class _TimerSetScreenState implements TimerSetScreenState {
+  const factory _TimerSetScreenState(
       {final double workingPrice,
-      final TimeOfDay workingTime}) = _$_WeatherForecastPanelState;
+      final TimeOfDay workingTime}) = _$_TimerSetScreenState;
 
   @override
   double get workingPrice;
-  @override // @Default(0) int workingTime,
+  @override
   TimeOfDay get workingTime;
   @override
   @JsonKey(ignore: true)
-  _$$_WeatherForecastPanelStateCopyWith<_$_WeatherForecastPanelState>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_TimerSetScreenStateCopyWith<_$_TimerSetScreenState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -9,5 +9,5 @@ class TimerSetScreenState with _$TimerSetScreenState {
   const factory TimerSetScreenState({
     @Default(0) double workingPrice,
     @Default(TimeOfDay(hour: 0, minute: 0)) TimeOfDay workingTime,
-  }) = _WeatherForecastPanelState;
+  }) = _TimerSetScreenState;
 }
