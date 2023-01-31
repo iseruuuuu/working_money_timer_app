@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:work_record_app/constants/color_constants.dart';
 import 'package:work_record_app/constants/style_constants.dart';
 import 'package:work_record_app/extension/extension.dart';
-import 'package:work_record_app/screen/timer_set/timer_set_screen_state.dart';
 import 'package:work_record_app/screen/timer_set/timer_set_screen_state_notifier.dart';
 
 class TimerSetScreen extends ConsumerWidget {
@@ -12,7 +11,7 @@ class TimerSetScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(timerSetScreenStateProvider);
+    final state = ref.watch(timerSetScreenStateNotifierProvider);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: ColorConstants.backgroundColor,
