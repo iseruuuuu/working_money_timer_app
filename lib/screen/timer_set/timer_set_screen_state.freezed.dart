@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TimerSetScreenState {
-  double get workingPrice => throw _privateConstructorUsedError;
-  int get workingTime => throw _privateConstructorUsedError;
+  double get workingPrice =>
+      throw _privateConstructorUsedError; // @Default(0) int workingTime,
+  TimeOfDay get workingTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TimerSetScreenStateCopyWith<TimerSetScreenState> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $TimerSetScreenStateCopyWith<$Res> {
           TimerSetScreenState value, $Res Function(TimerSetScreenState) then) =
       _$TimerSetScreenStateCopyWithImpl<$Res, TimerSetScreenState>;
   @useResult
-  $Res call({double workingPrice, int workingTime});
+  $Res call({double workingPrice, TimeOfDay workingTime});
 }
 
 /// @nodoc
@@ -57,7 +58,7 @@ class _$TimerSetScreenStateCopyWithImpl<$Res, $Val extends TimerSetScreenState>
       workingTime: null == workingTime
           ? _value.workingTime
           : workingTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TimeOfDay,
     ) as $Val);
   }
 }
@@ -71,7 +72,7 @@ abstract class _$$_WeatherForecastPanelStateCopyWith<$Res>
       __$$_WeatherForecastPanelStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double workingPrice, int workingTime});
+  $Res call({double workingPrice, TimeOfDay workingTime});
 }
 
 /// @nodoc
@@ -98,7 +99,7 @@ class __$$_WeatherForecastPanelStateCopyWithImpl<$Res>
       workingTime: null == workingTime
           ? _value.workingTime
           : workingTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TimeOfDay,
     ));
   }
 }
@@ -107,14 +108,16 @@ class __$$_WeatherForecastPanelStateCopyWithImpl<$Res>
 
 class _$_WeatherForecastPanelState implements _WeatherForecastPanelState {
   const _$_WeatherForecastPanelState(
-      {this.workingPrice = 0, this.workingTime = 0});
+      {this.workingPrice = 0,
+      this.workingTime = const TimeOfDay(hour: 0, minute: 0)});
 
   @override
   @JsonKey()
   final double workingPrice;
+// @Default(0) int workingTime,
   @override
   @JsonKey()
-  final int workingTime;
+  final TimeOfDay workingTime;
 
   @override
   String toString() {
@@ -146,12 +149,12 @@ class _$_WeatherForecastPanelState implements _WeatherForecastPanelState {
 abstract class _WeatherForecastPanelState implements TimerSetScreenState {
   const factory _WeatherForecastPanelState(
       {final double workingPrice,
-      final int workingTime}) = _$_WeatherForecastPanelState;
+      final TimeOfDay workingTime}) = _$_WeatherForecastPanelState;
 
   @override
   double get workingPrice;
-  @override
-  int get workingTime;
+  @override // @Default(0) int workingTime,
+  TimeOfDay get workingTime;
   @override
   @JsonKey(ignore: true)
   _$$_WeatherForecastPanelStateCopyWith<_$_WeatherForecastPanelState>
