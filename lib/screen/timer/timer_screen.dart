@@ -8,7 +8,7 @@ class TimerScreen extends StatefulWidget {
     required this.workingTime,
   }) : super(key: key);
 
-  final int workingTime;
+  final TimeOfDay workingTime;
   final double workingPrice;
 
   @override
