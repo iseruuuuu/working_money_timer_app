@@ -19,9 +19,7 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
       initialEntryMode: TimePickerEntryMode.input,
     );
     if (selectTime != null) {
-      state = state.copyWith(
-        workingTime: selectTime.hour,
-      );
+      state = state.copyWith(workingTime: selectTime);
     }
   }
 
