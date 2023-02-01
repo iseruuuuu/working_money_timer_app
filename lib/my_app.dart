@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:work_record_app/screen/timer_set/timer_set_screen.dart';
 
 class MyApp extends StatelessWidget {

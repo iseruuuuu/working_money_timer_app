@@ -1,6 +1,13 @@
+// Dart imports:
 import 'dart:async';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:stop_watch_timer/stop_watch_timer.dart';
+
+// Project imports:
 import 'package:work_record_app/constants/color_constants.dart';
 import 'package:work_record_app/constants/style_constants.dart';
 

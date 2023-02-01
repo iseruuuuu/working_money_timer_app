@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:work_record_app/constants/color_constants.dart';
 
 class StyleConstants {
