@@ -31,41 +31,50 @@ class TimerSetScreen extends ConsumerWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(30),
-              child: ListTile(
-                tileColor: ColorConstants.timerSetTileColor,
-                leading: Text('設定時間', style: StyleConstants.titleStyle),
-                trailing: Text(
-                  (state.workingTime.minute == 0 && state.workingTime.hour == 0)
-                      ? ''
-                      : '${state.workingTime.hour}時間${state.workingTime.minute}分',
-                  style: StyleConstants.timeStyle,
+              child: Container(
+                width: context.screenWidth - 60,
+                height: 60,
+                color: ColorConstants.timerSetTileColor,
+                child: ListTile(
+                  leading: Text('設定時間', style: StyleConstants.titleStyle),
+                  trailing: Text(
+                    (state.workingTime.minute == 0 &&
+                            state.workingTime.hour == 0)
+                        ? ''
+                        : '${state.workingTime.hour}時間${state.workingTime.minute}分',
+                    style: StyleConstants.timeStyle,
+                  ),
+                  onTap: () => ref
+                      .read(timerSetScreenStateNotifierProvider.notifier)
+                      .setTime(context),
                 ),
-                onTap: () => ref
-                    .read(timerSetScreenStateNotifierProvider.notifier)
-                    .setTime(context),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(30),
-              child: TextField(
-                onChanged: (value) => ref
-                    .read(timerSetScreenStateNotifierProvider.notifier)
-                    .onChanged(value),
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                decoration: InputDecoration(
-                  labelText: '時給',
-                  labelStyle: StyleConstants.titleStyle,
-                  fillColor: ColorConstants.timerSetTileColor,
-                  filled: true,
-                  border: InputBorder.none,
+              child: Container(
+                width: context.screenWidth - 60,
+                height: 60,
+                color: ColorConstants.timerSetTileColor,
+                child: TextField(
+                  onChanged: (value) => ref
+                      .read(timerSetScreenStateNotifierProvider.notifier)
+                      .onChanged(value),
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  decoration: InputDecoration(
+                    labelText: '時給',
+                    labelStyle: StyleConstants.titleStyle,
+                    filled: true,
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(30),
               child: SizedBox(
-                width: context.screenWidth,
+                width: context.screenWidth - 60,
                 height: 60,
                 child: ElevatedButton(
                   onPressed: () => ref
