@@ -43,6 +43,14 @@ class _TimerScreenState extends State<TimerScreen> {
     isTimer = true;
   }
 
+  @override
+  void dispose() async {
+    super.dispose();
+    await countDownTimer.dispose();
+    await countUpTimer.dispose();
+    workingTimer.cancel();
+  }
+
   StopWatchTimer countDown(TimeOfDay workingTime) {
     final amountWorkHour = workingTime.hour * 3600;
     final amountWorkMinute = workingTime.minute * 60;
@@ -65,6 +73,18 @@ class _TimerScreenState extends State<TimerScreen> {
     );
   }
 
+  void start() {
+    countDownTimer.onStartTimer();
+    countUpTimer.onStartTimer();
+    startWorking();
+  }
+
+  void stop() {
+    countDownTimer.onStopTimer();
+    countUpTimer.onStopTimer();
+    stopWorking();
+  }
+
   void startWorking() {
     if (!isTimer) {
       isTimer = true;
@@ -74,14 +94,6 @@ class _TimerScreenState extends State<TimerScreen> {
 
   void stopWorking() {
     isTimer = false;
-    workingTimer.cancel();
-  }
-
-  @override
-  void dispose() async {
-    super.dispose();
-    await countDownTimer.dispose();
-    await countUpTimer.dispose();
     workingTimer.cancel();
   }
 
@@ -139,34 +151,20 @@ class _TimerScreenState extends State<TimerScreen> {
           Text('稼いだ額', style: StyleConstants.timerLabel),
           Text('$workingPrice円', style: StyleConstants.timerLabel),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: ElevatedButton(
-                  onPressed: () {
-                    countDownTimer.onStartTimer();
-                    countUpTimer.onStartTimer();
-                    startWorking();
-                  },
-                  child: const Text(
-                    'Start',
-                    style: TextStyle(color: Colors.white),
-                  ),
+              ElevatedButton(
+                onPressed: start,
+                child: const Text(
+                  'Start',
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: ElevatedButton(
-                  onPressed: () {
-                    countDownTimer.onStopTimer();
-                    countUpTimer.onStopTimer();
-                    stopWorking();
-                  },
-                  child: const Text(
-                    'Stop',
-                    style: TextStyle(color: Colors.white),
-                  ),
+              ElevatedButton(
+                onPressed: stop,
+                child: const Text(
+                  'Stop',
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ],
