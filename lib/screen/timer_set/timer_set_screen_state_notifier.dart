@@ -28,14 +28,18 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   }
 
   void onTapTimer(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => TimerScreen(
-          workingPrice: state.workingPrice,
-          workingTime: state.workingTime,
+    if (state.workingTime.hour == 0 && state.workingTime.minute == 0 ||
+        state.workingPrice == 0) {
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => TimerScreen(
+            workingPrice: state.workingPrice,
+            workingTime: state.workingTime,
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
 }
