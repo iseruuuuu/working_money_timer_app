@@ -2,8 +2,9 @@
 import 'package:flutter/material.dart';
 
 class ColorConstants {
-  static Color appBarColor = const Color(0xFF4A67AD);
-  static Color backgroundColor = const Color(0xFFF2F2F7);
+  static Color appBarColor = const Color(0xFF173D6C);
+  static Color backgroundColor = const Color(0xFFFFFFFF);
+  static Color timerSetTileColor = const Color(0xFFE3E3E3);
   static Color yellow = Colors.yellow;
   static Color lightBlue = Colors.lightBlue;
   static Color blue = Colors.blue;

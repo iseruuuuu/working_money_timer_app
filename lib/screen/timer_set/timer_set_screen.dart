@@ -23,14 +23,7 @@ class TimerSetScreen extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: ColorConstants.appBarColor,
         elevation: 0,
-        title: const Text(
-          '労働タイマー',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
+        title: Text('労働タイマー', style: StyleConstants.appBarStyle),
       ),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -39,11 +32,8 @@ class TimerSetScreen extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(30),
               child: ListTile(
-                tileColor: ColorConstants.white,
-                leading: Text(
-                  '設定時間',
-                  style: StyleConstants.titleStyle,
-                ),
+                tileColor: ColorConstants.timerSetTileColor,
+                leading: Text('設定時間', style: StyleConstants.titleStyle),
                 trailing: Text(
                   (state.workingTime.minute == 0 && state.workingTime.hour == 0)
                       ? ''
@@ -66,8 +56,8 @@ class TimerSetScreen extends ConsumerWidget {
                 decoration: InputDecoration(
                   labelText: '時給',
                   labelStyle: StyleConstants.titleStyle,
+                  fillColor: ColorConstants.timerSetTileColor,
                   filled: true,
-                  fillColor: ColorConstants.white,
                   border: InputBorder.none,
                 ),
               ),
@@ -76,16 +66,13 @@ class TimerSetScreen extends ConsumerWidget {
               padding: const EdgeInsets.all(30),
               child: SizedBox(
                 width: context.screenWidth,
-                height: 50,
+                height: 60,
                 child: ElevatedButton(
                   onPressed: () => ref
                       .read(timerSetScreenStateNotifierProvider.notifier)
                       .onTapTimer(context),
                   style: StyleConstants.buttonStyle,
-                  child: Text(
-                    'スタート',
-                    style: StyleConstants.buttonTextStyle,
-                  ),
+                  child: Text('スタート', style: StyleConstants.buttonTextStyle),
                 ),
               ),
             ),
