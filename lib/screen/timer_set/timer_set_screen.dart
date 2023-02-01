@@ -40,8 +40,9 @@ class TimerSetScreen extends ConsumerWidget {
                   style: StyleConstants.titleStyle,
                 ),
                 trailing: Text(
-                  //TODO 状態が変わるようにする。
-                  state.workingTime.toString(),
+                  (state.workingTime.minute == 0 && state.workingTime.hour == 0)
+                      ? ''
+                      : '${state.workingTime.hour}時間${state.workingTime.minute}分',
                   style: StyleConstants.timeStyle,
                 ),
                 onTap: () => ref
