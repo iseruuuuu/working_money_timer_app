@@ -30,4 +30,16 @@ class StyleConstants {
       ),
     ),
   );
+
+  static TextStyle timerLabel = const TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static TextStyle timeLabel = const TextStyle(
+    fontSize: 45,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
 }
