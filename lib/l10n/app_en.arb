@@ -5,5 +5,6 @@
   "timerSetWorkPrice" : "Hourly wage",
   "timerSetStart" : "START",
   "hour": "oh",
-  "minutes": ""
+  "minutes": "",
+  "snack_bar": "Please enter working hours or hourly rate."
 }

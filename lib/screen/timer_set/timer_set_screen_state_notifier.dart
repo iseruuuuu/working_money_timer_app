@@ -1,8 +1,11 @@
 // Flutter imports:
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:work_record_app/l10n/l10n.dart';
 import 'package:work_record_app/screen/timer/timer_screen.dart';
 
 // Project imports:
@@ -20,7 +23,6 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   void setTime(BuildContext context) async {
     final selectTime = await showTimePicker(
       context: context,
-      //TODO 設定時間の初期値を０時間０分にする。
       initialTime: const TimeOfDay(hour: 0, minute: 0),
       initialEntryMode: TimePickerEntryMode.input,
     );
@@ -55,8 +57,8 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   }
 
   void openSnackBar(BuildContext context) {
-    //TODO 言語を多言語にする。
-    const snackBar = SnackBar(content: Text('労働時間 or 時給を入力してください。'));
+    final l10n = L10n.of(context)!;
+    var snackBar = SnackBar(content: Text(l10n.snack_bar));
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

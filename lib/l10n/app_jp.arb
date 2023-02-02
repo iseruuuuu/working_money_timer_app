@@ -5,5 +5,6 @@
   "timerSetWorkPrice" : "時給",
   "timerSetStart" : "スタート",
   "hour": "時",
-  "minutes": "分"
+  "minutes": "分",
+  "snack_bar": "労働時間 or 時給を入力してください。"
 }

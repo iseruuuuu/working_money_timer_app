@@ -21,4 +21,7 @@ class L10nEn extends L10n {
 
   @override
   String get minutes => '';
+
+  @override
+  String get snack_bar => 'Please enter working hours or hourly rate.';
 }

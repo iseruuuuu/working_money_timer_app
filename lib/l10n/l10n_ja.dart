@@ -21,4 +21,7 @@ class L10nJa extends L10n {
 
   @override
   String get minutes => '分';
+
+  @override
+  String get snack_bar => '労働時間 or 時給を入力してください。';
 }
