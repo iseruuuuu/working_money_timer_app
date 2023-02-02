@@ -21,7 +21,7 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
     final selectTime = await showTimePicker(
       context: context,
       //TODO 設定時間の初期値を０時間０分にする。
-      initialTime: const TimeOfDay(hour: 1, minute: 0),
+      initialTime: const TimeOfDay(hour: 0, minute: 0),
       initialEntryMode: TimePickerEntryMode.input,
     );
     if (selectTime != null) {
