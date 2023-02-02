@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:work_record_app/screen/timer/timer_screen.dart';
 
 // Project imports:
-import 'package:work_record_app/screen/timer/timer_screen.dart';
 import 'package:work_record_app/screen/timer_set/timer_set_screen_state.dart';
 
 final timerSetScreenStateNotifierProvider =
@@ -25,7 +25,7 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
       initialEntryMode: TimePickerEntryMode.input,
     );
     if (selectTime != null) {
-      state = state.copyWith(workingTime: selectTime);
+      state = state.copyWith(workingSetTime: selectTime);
     }
   }
 
@@ -34,20 +34,20 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   }
 
   void onChanged(String value) {
-    state = state.copyWith(workingPrice: double.parse(value));
+    state = state.copyWith(workingSetPrice: double.parse(value));
   }
 
   void onTapTimer(BuildContext context) {
-    if (state.workingTime.hour == 0 && state.workingTime.minute == 0 ||
-        state.workingPrice == 0) {
+    if (state.workingSetTime.hour == 0 && state.workingSetTime.minute == 0 ||
+        state.workingSetPrice == 0) {
       openSnackBar(context);
     } else {
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => TimerScreen(
-            workingPrice: state.workingPrice,
-            workingTime: state.workingTime,
+            workingPrice: state.workingSetPrice,
+            workingTime: state.workingSetTime,
           ),
         ),
       );

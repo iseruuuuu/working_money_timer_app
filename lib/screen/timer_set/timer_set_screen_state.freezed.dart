@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TimerSetScreenState {
-  double get workingPrice => throw _privateConstructorUsedError;
-  TimeOfDay get workingTime => throw _privateConstructorUsedError;
+  double get workingSetPrice => throw _privateConstructorUsedError;
+  TimeOfDay get workingSetTime => throw _privateConstructorUsedError;
+  bool get isTimer => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TimerSetScreenStateCopyWith<TimerSetScreenState> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $TimerSetScreenStateCopyWith<$Res> {
           TimerSetScreenState value, $Res Function(TimerSetScreenState) then) =
       _$TimerSetScreenStateCopyWithImpl<$Res, TimerSetScreenState>;
   @useResult
-  $Res call({double workingPrice, TimeOfDay workingTime});
+  $Res call({double workingSetPrice, TimeOfDay workingSetTime, bool isTimer});
 }
 
 /// @nodoc
@@ -46,18 +47,23 @@ class _$TimerSetScreenStateCopyWithImpl<$Res, $Val extends TimerSetScreenState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? workingPrice = null,
-    Object? workingTime = null,
+    Object? workingSetPrice = null,
+    Object? workingSetTime = null,
+    Object? isTimer = null,
   }) {
     return _then(_value.copyWith(
-      workingPrice: null == workingPrice
-          ? _value.workingPrice
-          : workingPrice // ignore: cast_nullable_to_non_nullable
+      workingSetPrice: null == workingSetPrice
+          ? _value.workingSetPrice
+          : workingSetPrice // ignore: cast_nullable_to_non_nullable
               as double,
-      workingTime: null == workingTime
-          ? _value.workingTime
-          : workingTime // ignore: cast_nullable_to_non_nullable
+      workingSetTime: null == workingSetTime
+          ? _value.workingSetTime
+          : workingSetTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay,
+      isTimer: null == isTimer
+          ? _value.isTimer
+          : isTimer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -70,7 +76,7 @@ abstract class _$$_TimerSetScreenStateCopyWith<$Res>
       __$$_TimerSetScreenStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double workingPrice, TimeOfDay workingTime});
+  $Res call({double workingSetPrice, TimeOfDay workingSetTime, bool isTimer});
 }
 
 /// @nodoc
@@ -84,18 +90,23 @@ class __$$_TimerSetScreenStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? workingPrice = null,
-    Object? workingTime = null,
+    Object? workingSetPrice = null,
+    Object? workingSetTime = null,
+    Object? isTimer = null,
   }) {
     return _then(_$_TimerSetScreenState(
-      workingPrice: null == workingPrice
-          ? _value.workingPrice
-          : workingPrice // ignore: cast_nullable_to_non_nullable
+      workingSetPrice: null == workingSetPrice
+          ? _value.workingSetPrice
+          : workingSetPrice // ignore: cast_nullable_to_non_nullable
               as double,
-      workingTime: null == workingTime
-          ? _value.workingTime
-          : workingTime // ignore: cast_nullable_to_non_nullable
+      workingSetTime: null == workingSetTime
+          ? _value.workingSetTime
+          : workingSetTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay,
+      isTimer: null == isTimer
+          ? _value.isTimer
+          : isTimer // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -104,19 +115,23 @@ class __$$_TimerSetScreenStateCopyWithImpl<$Res>
 
 class _$_TimerSetScreenState implements _TimerSetScreenState {
   const _$_TimerSetScreenState(
-      {this.workingPrice = 0,
-      this.workingTime = const TimeOfDay(hour: 0, minute: 0)});
+      {this.workingSetPrice = 0,
+      this.workingSetTime = const TimeOfDay(hour: 0, minute: 0),
+      this.isTimer = false});
 
   @override
   @JsonKey()
-  final double workingPrice;
+  final double workingSetPrice;
   @override
   @JsonKey()
-  final TimeOfDay workingTime;
+  final TimeOfDay workingSetTime;
+  @override
+  @JsonKey()
+  final bool isTimer;
 
   @override
   String toString() {
-    return 'TimerSetScreenState(workingPrice: $workingPrice, workingTime: $workingTime)';
+    return 'TimerSetScreenState(workingSetPrice: $workingSetPrice, workingSetTime: $workingSetTime, isTimer: $isTimer)';
   }
 
   @override
@@ -124,14 +139,16 @@ class _$_TimerSetScreenState implements _TimerSetScreenState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TimerSetScreenState &&
-            (identical(other.workingPrice, workingPrice) ||
-                other.workingPrice == workingPrice) &&
-            (identical(other.workingTime, workingTime) ||
-                other.workingTime == workingTime));
+            (identical(other.workingSetPrice, workingSetPrice) ||
+                other.workingSetPrice == workingSetPrice) &&
+            (identical(other.workingSetTime, workingSetTime) ||
+                other.workingSetTime == workingSetTime) &&
+            (identical(other.isTimer, isTimer) || other.isTimer == isTimer));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, workingPrice, workingTime);
+  int get hashCode =>
+      Object.hash(runtimeType, workingSetPrice, workingSetTime, isTimer);
 
   @JsonKey(ignore: true)
   @override
@@ -143,13 +160,16 @@ class _$_TimerSetScreenState implements _TimerSetScreenState {
 
 abstract class _TimerSetScreenState implements TimerSetScreenState {
   const factory _TimerSetScreenState(
-      {final double workingPrice,
-      final TimeOfDay workingTime}) = _$_TimerSetScreenState;
+      {final double workingSetPrice,
+      final TimeOfDay workingSetTime,
+      final bool isTimer}) = _$_TimerSetScreenState;
 
   @override
-  double get workingPrice;
+  double get workingSetPrice;
   @override
-  TimeOfDay get workingTime;
+  TimeOfDay get workingSetTime;
+  @override
+  bool get isTimer;
   @override
   @JsonKey(ignore: true)
   _$$_TimerSetScreenStateCopyWith<_$_TimerSetScreenState> get copyWith =>

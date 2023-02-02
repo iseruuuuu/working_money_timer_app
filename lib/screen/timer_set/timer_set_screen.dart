@@ -44,11 +44,11 @@ class TimerSetScreen extends ConsumerWidget {
                     style: StyleConstants.titleStyle,
                   ),
                   trailing: Text(
-                    (state.workingTime.minute == 0 &&
-                            state.workingTime.hour == 0)
+                    (state.workingSetTime.minute == 0 &&
+                            state.workingSetTime.hour == 0)
                         ? ''
-                        : '${state.workingTime.hour} ${l10n.hour} '
-                            '${state.workingTime.minute}${l10n.minutes}',
+                        : '${state.workingSetTime.hour} ${l10n.hour} '
+                            '${state.workingSetTime.minute}${l10n.minutes}',
                     style: StyleConstants.timeStyle,
                   ),
                   onTap: () => ref
