@@ -27,7 +27,7 @@ class TimerSetScreen extends ConsumerWidget {
         appBar: AppBar(
           backgroundColor: ColorConstants.appBarColor,
           elevation: 0,
-          title: Text('労働タイマー', style: StyleConstants.appBarStyle),
+          title: Text('秒給タイマー', style: StyleConstants.appBarStyle),
         ),
         body: Column(
           children: [
