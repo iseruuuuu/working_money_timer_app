@@ -40,7 +40,7 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   void onTapTimer(BuildContext context) {
     if (state.workingTime.hour == 0 && state.workingTime.minute == 0 ||
         state.workingPrice == 0) {
-      //TODO ダイアログorSnackBarを出す。
+      openSnackBar(context);
     } else {
       Navigator.push(
         context,
@@ -52,5 +52,11 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
         ),
       );
     }
+  }
+
+  void openSnackBar(BuildContext context) {
+    //TODO 言語を多言語にする。
+    const snackBar = SnackBar(content: Text('労働時間 or 時給を入力してください。'));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
