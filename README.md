@@ -4,44 +4,26 @@
 
 ```
 lib
-  
-  - database/
-    - db_bloc.dart
-    - db_provider.dart
-  
-  - model/
-    - chart_data.dart
-    - money.dart
-  
-  - preference/
-    - shared_preference.dart
-  
+  - constant/
+    - color_constants.dart
+    - style_constants.dart
+  - extension/
+    - extension.dart
+  -l10n/
+    - app_en.arb
+    - app_jp.arb
+    - l10n.dart
+    - l10n_en.dart
+    - l10n_jp.dart
   - screen/
-    - calendar
-      - calendar_screen.dart
-      - calendar_screen_controller.dart
-    - category
-      - category_screen.dart
-      - category_screen_controller.dart
-    - detail/
-      - detail_screen.dart
-      - detail_screen_controller.dart
-    - graph/
-      - graph_screen.dart
-      - graph_screen_controller.dart
-    - home/
-      - category
-        - category_screen.dart
-        - category_screen_controller.dart
-      - home_screen.dart
-      - home_screen_controller.dart
-    - setting/
-      - setting_screen.dart
-      - setting_screen_controller.dart
-    - tab/
-      - tab_screen.dart
-      - tab_screen_controller.dart
-    
+    - timer
+      - timer_screen.dart
+      - timer_screen_state.dart
+      - timer_screen_state_notifier.dart
+    - timer_set
+      - timer_set_screen.dart
+      - timer_set_screen_state.dart
+      - timer_set_screen_state_notifier.dart
   - main.dart
   - my_app.dart
 ```
@@ -52,8 +34,7 @@ lib
 
 # Package for State Management 📦
 
-・GetX.   
-・Provider
+・RiverPod
 
 # Naming convention 😄
 
