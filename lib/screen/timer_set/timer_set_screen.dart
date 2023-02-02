@@ -1,6 +1,6 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:work_record_app/l10n/l10n.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,6 +17,7 @@ class TimerSetScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(timerSetScreenStateNotifierProvider);
+    final l10n = L10n.of(context)!;
     return GestureDetector(
       onTap: () => ref
           .read(timerSetScreenStateNotifierProvider.notifier)
@@ -27,7 +28,7 @@ class TimerSetScreen extends ConsumerWidget {
         appBar: AppBar(
           backgroundColor: ColorConstants.appBarColor,
           elevation: 0,
-          title: Text('秒給タイマー', style: StyleConstants.appBarStyle),
+          title: Text(l10n.timerSetAppBar, style: StyleConstants.appBarStyle),
         ),
         body: Column(
           children: [
@@ -38,7 +39,8 @@ class TimerSetScreen extends ConsumerWidget {
                 height: 60,
                 color: ColorConstants.timerSetTileColor,
                 child: ListTile(
-                  leading: Text('設定時間', style: StyleConstants.titleStyle),
+                  leading: Text(l10n.timerSetWorkTime,
+                      style: StyleConstants.titleStyle),
                   trailing: Text(
                     (state.workingTime.minute == 0 &&
                             state.workingTime.hour == 0)
@@ -65,7 +67,7 @@ class TimerSetScreen extends ConsumerWidget {
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   decoration: InputDecoration(
-                    labelText: '時給',
+                    labelText: l10n.timerSetWorkPrice,
                     labelStyle: StyleConstants.titleStyle,
                     filled: true,
                     border: InputBorder.none,
@@ -83,7 +85,8 @@ class TimerSetScreen extends ConsumerWidget {
                       .read(timerSetScreenStateNotifierProvider.notifier)
                       .onTapTimer(context),
                   style: StyleConstants.buttonStyle,
-                  child: Text('スタート', style: StyleConstants.buttonTextStyle),
+                  child: Text(l10n.timerSetStart,
+                      style: StyleConstants.buttonTextStyle),
                 ),
               ),
             ),

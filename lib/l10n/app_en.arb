@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "timerSetAppBar":"WorkingTimer",
+  "timerSetWorkTime" : "SettingTime",
+  "timerSetWorkPrice" : "Hourly wage",
+  "timerSetStart" : "START"
+}
