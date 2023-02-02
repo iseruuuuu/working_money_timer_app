@@ -29,6 +29,10 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
     }
   }
 
+  void closeKeyboard(BuildContext context) {
+    FocusScope.of(context).unfocus();
+  }
+
   void onChanged(String value) {
     state = state.copyWith(workingPrice: double.parse(value));
   }

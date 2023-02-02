@@ -17,17 +17,19 @@ class TimerSetScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(timerSetScreenStateNotifierProvider);
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: ColorConstants.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: ColorConstants.appBarColor,
-        elevation: 0,
-        title: Text('労働タイマー', style: StyleConstants.appBarStyle),
-      ),
-      body: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: Column(
+    return GestureDetector(
+      onTap: () => ref
+          .read(timerSetScreenStateNotifierProvider.notifier)
+          .closeKeyboard(context),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: ColorConstants.backgroundColor,
+        appBar: AppBar(
+          backgroundColor: ColorConstants.appBarColor,
+          elevation: 0,
+          title: Text('労働タイマー', style: StyleConstants.appBarStyle),
+        ),
+        body: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(30),
