@@ -1,14 +1,15 @@
-// Flutter imports:
+// Dart imports:
 import 'dart:math';
 
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:work_record_app/l10n/l10n.dart';
-import 'package:work_record_app/screen/timer/timer_screen.dart';
 
 // Project imports:
+import 'package:work_record_app/l10n/l10n.dart';
+import 'package:work_record_app/screen/timer/timer_screen.dart';
 import 'package:work_record_app/screen/timer_set/timer_set_screen_state.dart';
 
 final timerSetScreenStateNotifierProvider =

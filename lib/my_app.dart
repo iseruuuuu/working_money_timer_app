@@ -1,8 +1,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:work_record_app/l10n/l10n.dart';
 
 // Project imports:
+import 'package:work_record_app/l10n/l10n.dart';
 import 'package:work_record_app/screen/timer_set/timer_set_screen.dart';
 
 class MyApp extends StatelessWidget {
