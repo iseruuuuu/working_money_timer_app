@@ -15,4 +15,10 @@ class L10nJa extends L10n {
 
   @override
   String get timerSetStart => 'スタート';
+
+  @override
+  String get hour => '時';
+
+  @override
+  String get minutes => '分';
 }

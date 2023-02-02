@@ -39,13 +39,16 @@ class TimerSetScreen extends ConsumerWidget {
                 height: 60,
                 color: ColorConstants.timerSetTileColor,
                 child: ListTile(
-                  leading: Text(l10n.timerSetWorkTime,
-                      style: StyleConstants.titleStyle),
+                  leading: Text(
+                    l10n.timerSetWorkTime,
+                    style: StyleConstants.titleStyle,
+                  ),
                   trailing: Text(
                     (state.workingTime.minute == 0 &&
                             state.workingTime.hour == 0)
                         ? ''
-                        : '${state.workingTime.hour}時間${state.workingTime.minute}分',
+                        : '${state.workingTime.hour} ${l10n.hour} '
+                            '${state.workingTime.minute}${l10n.minutes}',
                     style: StyleConstants.timeStyle,
                   ),
                   onTap: () => ref
@@ -85,8 +88,10 @@ class TimerSetScreen extends ConsumerWidget {
                       .read(timerSetScreenStateNotifierProvider.notifier)
                       .onTapTimer(context),
                   style: StyleConstants.buttonStyle,
-                  child: Text(l10n.timerSetStart,
-                      style: StyleConstants.buttonTextStyle),
+                  child: Text(
+                    l10n.timerSetStart,
+                    style: StyleConstants.buttonTextStyle,
+                  ),
                 ),
               ),
             ),

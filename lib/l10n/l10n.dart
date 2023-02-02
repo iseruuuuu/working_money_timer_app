@@ -116,6 +116,18 @@ abstract class L10n {
   /// In ja, this message translates to:
   /// **'スタート'**
   String get timerSetStart;
+
+  /// No description provided for @hour.
+  ///
+  /// In ja, this message translates to:
+  /// **'時'**
+  String get hour;
+
+  /// No description provided for @minutes.
+  ///
+  /// In ja, this message translates to:
+  /// **'分'**
+  String get minutes;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

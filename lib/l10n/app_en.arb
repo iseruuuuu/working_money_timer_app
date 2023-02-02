@@ -3,5 +3,7 @@
   "timerSetAppBar":"WorkingTimer",
   "timerSetWorkTime" : "SettingTime",
   "timerSetWorkPrice" : "Hourly wage",
-  "timerSetStart" : "START"
+  "timerSetStart" : "START",
+  "hour": "oh",
+  "minutes": ""
 }
