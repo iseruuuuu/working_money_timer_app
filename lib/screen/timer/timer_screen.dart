@@ -25,7 +25,7 @@ class TimerScreen extends StatefulWidget {
   State<TimerScreen> createState() => _TimerScreenState();
 }
 
-class _TimerScreenState extends State<TimerScreen> {
+class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
   final _isHours = true;
   final StopWatchTimer countUpTimer = StopWatchTimer(
     presetMillisecond: StopWatchTimer.getMilliSecFromSecond(0),
@@ -40,23 +40,25 @@ class _TimerScreenState extends State<TimerScreen> {
   @override
   void initState() {
     super.initState();
-    //カウントアップ
     countUpTimer.onStartTimer();
-    //カウントダウン
     countDownTimer = countDown(widget.workingTime);
     countDownTimer.onStartTimer();
-    //秒給
     workingTimer = countTimer();
     isTimer = true;
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() async {
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
     await countDownTimer.dispose();
     await countUpTimer.dispose();
     workingTimer.cancel();
   }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {}
 
   StopWatchTimer countDown(TimeOfDay workingTime) {
     final amountWorkHour = workingTime.hour * 3600;
