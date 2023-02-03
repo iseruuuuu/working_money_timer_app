@@ -10,6 +10,7 @@ import 'package:stop_watch_timer/stop_watch_timer.dart';
 // Project imports:
 import 'package:work_record_app/constants/color_constants.dart';
 import 'package:work_record_app/constants/style_constants.dart';
+import 'package:work_record_app/extension/extension.dart';
 
 class TimerScreen extends StatefulWidget {
   const TimerScreen({
@@ -115,7 +116,10 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
       ),
       body: Column(
         children: [
-          Text('労働残り時間', style: StyleConstants.timerLabel),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Text('労働残り時間', style: StyleConstants.timerLabel),
+          ),
           StreamBuilder<int>(
             stream: countDownTimer.rawTime,
             initialData: countDownTimer.rawTime.value,
@@ -136,7 +140,10 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
               );
             },
           ),
-          Text('働いた時間', style: StyleConstants.timerLabel),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Text('働いた時間', style: StyleConstants.timerLabel),
+          ),
           StreamBuilder<int>(
             stream: countUpTimer.rawTime,
             initialData: countUpTimer.rawTime.value,
@@ -157,27 +164,42 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
               );
             },
           ),
-          Text('稼いだ額', style: StyleConstants.timerLabel),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Text('稼いだ額', style: StyleConstants.timerLabel),
+          ),
           Text('$workingPrice円', style: StyleConstants.timerLabel),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              ElevatedButton(
-                onPressed: start,
-                child: const Text(
-                  'Start',
-                  style: TextStyle(color: Colors.white),
+              SizedBox(
+                width: context.screenWidth / 3,
+                height: 60,
+                child: ElevatedButton(
+                  style: StyleConstants.timerButtonStyle,
+                  onPressed: start,
+                  child: Text(
+                    'START',
+                    style: StyleConstants.timerButton,
+                  ),
                 ),
               ),
-              ElevatedButton(
-                onPressed: stop,
-                child: const Text(
-                  'Stop',
-                  style: TextStyle(color: Colors.white),
+              SizedBox(
+                width: context.screenWidth / 3,
+                height: 60,
+                child: ElevatedButton(
+                  style: StyleConstants.timerButtonStyle,
+                  onPressed: stop,
+                  child: Text(
+                    'STOP',
+                    style: StyleConstants.timerButton,
+                  ),
                 ),
               ),
             ],
           ),
+          const Spacer(),
         ],
       ),
     );
