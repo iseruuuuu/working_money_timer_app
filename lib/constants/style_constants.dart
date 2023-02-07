@@ -41,7 +41,7 @@ class StyleConstants {
   );
 
   static TextStyle timerLabel = const TextStyle(
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: FontWeight.bold,
     color: Colors.black,
   );
