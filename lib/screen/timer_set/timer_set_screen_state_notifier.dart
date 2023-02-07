@@ -1,6 +1,3 @@
-// Dart imports:
-import 'dart:math';
-
 // Flutter imports:
 import 'package:flutter/material.dart';
 
@@ -11,6 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:work_record_app/l10n/l10n.dart';
 import 'package:work_record_app/screen/timer/timer_screen.dart';
 import 'package:work_record_app/screen/timer_set/timer_set_screen_state.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import "package:intl/intl.dart";
 
 final timerSetScreenStateNotifierProvider =
     StateNotifierProvider<TimerSetScreenStateNotifier, TimerSetScreenState>(
@@ -22,14 +21,21 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   TimerSetScreenStateNotifier() : super(const TimerSetScreenState());
 
   void setTime(BuildContext context) async {
-    final selectTime = await showTimePicker(
-      context: context,
-      initialTime: const TimeOfDay(hour: 0, minute: 0),
-      initialEntryMode: TimePickerEntryMode.input,
+    DatePicker.showTime12hPicker(
+      context,
+      onConfirm: (date) {
+        print(date);
+        state = state.copyWith(
+          workingSetTime: TimeOfDay(
+            hour: date.hour,
+            minute: date.minute,
+          ),
+        );
+      },
+      showTitleActions: true,
+      currentTime: DateTime(2000, 1, 1, 0, 0),
+      locale: LocaleType.jp,
     );
-    if (selectTime != null) {
-      state = state.copyWith(workingSetTime: selectTime);
-    }
   }
 
   void closeKeyboard(BuildContext context) {
