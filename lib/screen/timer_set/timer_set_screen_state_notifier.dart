@@ -1,11 +1,14 @@
 // Flutter imports:
+import 'dart:convert';
+
 import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_picker/picker.dart';
 
 // Package imports:
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:work_record_app/admob/admob_interstitial.dart';
+import 'package:work_record_app/constants/picker_constants.dart';
 
 // Project imports:
 import 'package:work_record_app/l10n/l10n.dart';
@@ -41,20 +44,28 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   }
 
   void setTime(BuildContext context) async {
-    DatePicker.showTime12hPicker(
-      context,
-      onConfirm: (date) {
+    Picker(
+      adapter: PickerDataAdapter<String>(
+        pickerData: const JsonDecoder().convert(pickerConstants),
+        isArray: true,
+      ),
+      hideHeader: true,
+      //TODO 多言語にする
+      title: const Center(child: Text("Please Select")),
+      //TODO ２つのボタンの位置を調整したい
+      //TODO 多言語にする
+      cancelText: 'Cancel',
+      //TODO 多言語にする
+      confirmText: 'Confirm',
+      onConfirm: (Picker picker, List value) {
         state = state.copyWith(
           workingSetTime: TimeOfDay(
-            hour: date.hour,
-            minute: date.minute,
+            hour: value[0],
+            minute: value[1],
           ),
         );
       },
-      showTitleActions: true,
-      currentTime: DateTime(2000, 1, 1, 0, 0),
-      locale: LocaleType.jp,
-    );
+    ).showDialog(context);
   }
 
   void closeKeyboard(BuildContext context) {
