@@ -119,6 +119,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 30),
+            //TODO  多言語対応をする
             child: Text('労働残り時間', style: StyleConstants.timerLabel),
           ),
           StreamBuilder<int>(
@@ -143,6 +144,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30),
+            //TODO  多言語対応をする
             child: Text('働いた時間', style: StyleConstants.timerLabel),
           ),
           StreamBuilder<int>(
@@ -167,6 +169,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30),
+            //TODO  多言語対応をする
             child: Text('稼いだ額', style: StyleConstants.timerLabel),
           ),
           Text('$workingPrice円', style: StyleConstants.timerLabel),
@@ -181,6 +184,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
                   style: StyleConstants.timerButtonStyle,
                   onPressed: start,
                   child: Text(
+                    //TODO  多言語対応をする
                     'START',
                     style: StyleConstants.timerButton,
                   ),
@@ -193,6 +197,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
                   style: StyleConstants.timerButtonStyle,
                   onPressed: stop,
                   child: Text(
+                    //TODO  多言語対応をする
                     'STOP',
                     style: StyleConstants.timerButton,
                   ),
