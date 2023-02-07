@@ -1,9 +1,11 @@
 // Flutter imports:
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:work_record_app/admob/admob_interstitial.dart';
 
 // Project imports:
 import 'package:work_record_app/l10n/l10n.dart';
@@ -13,11 +15,30 @@ import 'package:work_record_app/screen/timer_set/timer_set_screen_state.dart';
 final timerSetScreenStateNotifierProvider =
     StateNotifierProvider<TimerSetScreenStateNotifier, TimerSetScreenState>(
         (ref) {
-  return TimerSetScreenStateNotifier();
+  return TimerSetScreenStateNotifier(const TimerSetScreenState());
 });
 
 class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
-  TimerSetScreenStateNotifier() : super(const TimerSetScreenState());
+  TimerSetScreenStateNotifier(
+    TimerSetScreenState state,
+  ) : super(state) {
+    initState();
+  }
+
+  AdmobInterstitial adInterstitial = AdmobInterstitial();
+
+  void initState() {
+    loadAppTracking();
+    AdmobInterstitial().createAd();
+    adInterstitial.createAd();
+  }
+
+  Future<void> loadAppTracking() async {
+    if (await AppTrackingTransparency.trackingAuthorizationStatus ==
+        TrackingStatus.notDetermined) {
+      await AppTrackingTransparency.requestTrackingAuthorization();
+    }
+  }
 
   void setTime(BuildContext context) async {
     DatePicker.showTime12hPicker(
@@ -65,5 +86,6 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
     final l10n = L10n.of(context)!;
     var snackBar = SnackBar(content: Text(l10n.snack_bar));
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    adInterstitial.showAd();
   }
 }

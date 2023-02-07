@@ -18,6 +18,15 @@
 	<string>秒給タイマー</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-3471170179614589~1418225544</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>取得したトラッキングデータをお客様に合わせたご提案等のサービスの改善や広告配信、広告効果測定を目的として分析・使用させていただきます。</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+    <string>sms</string>
+    <string>tel</string>
+    </array>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleShortVersionString</key>
