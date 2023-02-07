@@ -132,8 +132,26 @@ abstract class L10n {
   /// No description provided for @snack_bar.
   ///
   /// In ja, this message translates to:
-  /// **'労働時間 or 時給を入力してください。'**
+  /// **'労働時間または時給を入力してください。'**
   String get snack_bar;
+
+  /// No description provided for @picker_title.
+  ///
+  /// In ja, this message translates to:
+  /// **'労働時間の設定'**
+  String get picker_title;
+
+  /// No description provided for @picker_cancel.
+  ///
+  /// In ja, this message translates to:
+  /// **'キャンセル'**
+  String get picker_cancel;
+
+  /// No description provided for @picker_confirm.
+  ///
+  /// In ja, this message translates to:
+  /// **'設定'**
+  String get picker_confirm;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

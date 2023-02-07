@@ -6,5 +6,8 @@
   "timerSetStart" : "スタート",
   "hour": "時",
   "minutes": "分",
-  "snack_bar": "労働時間 or 時給を入力してください。"
+  "snack_bar": "労働時間または時給を入力してください。",
+  "picker_title":"労働時間の設定",
+  "picker_cancel":"キャンセル",
+  "picker_confirm":"設定"
 }

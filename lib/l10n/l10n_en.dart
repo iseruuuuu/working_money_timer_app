@@ -24,4 +24,13 @@ class L10nEn extends L10n {
 
   @override
   String get snack_bar => 'Please enter working hours or hourly rate.';
+
+  @override
+  String get picker_title => 'Select Working Time';
+
+  @override
+  String get picker_cancel => 'Cancel';
+
+  @override
+  String get picker_confirm => 'OK';
 }

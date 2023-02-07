@@ -44,19 +44,17 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
   }
 
   void setTime(BuildContext context) async {
+    final l10n = L10n.of(context)!;
     Picker(
       adapter: PickerDataAdapter<String>(
         pickerData: const JsonDecoder().convert(pickerConstants),
         isArray: true,
       ),
       hideHeader: true,
-      //TODO 多言語にする
-      title: const Center(child: Text("Please Select")),
+      title: Center(child: Text(l10n.picker_title)),
       //TODO ２つのボタンの位置を調整したい
-      //TODO 多言語にする
-      cancelText: 'Cancel',
-      //TODO 多言語にする
-      confirmText: 'Confirm',
+      cancelText: l10n.picker_cancel,
+      confirmText: l10n.picker_confirm,
       onConfirm: (Picker picker, List value) {
         state = state.copyWith(
           workingSetTime: TimeOfDay(
