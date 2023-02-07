@@ -2,13 +2,13 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import 'package:work_record_app/l10n/l10n.dart';
 import 'package:work_record_app/screen/timer/timer_screen.dart';
 import 'package:work_record_app/screen/timer_set/timer_set_screen_state.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 final timerSetScreenStateNotifierProvider =
     StateNotifierProvider<TimerSetScreenStateNotifier, TimerSetScreenState>(
