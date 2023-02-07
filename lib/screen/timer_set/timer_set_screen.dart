@@ -48,7 +48,7 @@ class TimerSetScreen extends ConsumerWidget {
                     (state.workingSetTime.minute == 0 &&
                             state.workingSetTime.hour == 0)
                         ? ''
-                        : '${state.workingSetTime.hour} ${l10n.hour} '
+                        : '${state.workingSetTime.hour}${l10n.hour}'
                             '${state.workingSetTime.minute}${l10n.minutes}',
                     style: StyleConstants.timeStyle,
                   ),
