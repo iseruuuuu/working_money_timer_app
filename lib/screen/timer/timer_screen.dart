@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:stop_watch_timer/stop_watch_timer.dart';
-import 'package:work_record_app/admob/admob_banner.dart';
 
 // Project imports:
+import 'package:work_record_app/admob/admob_banner.dart';
 import 'package:work_record_app/constants/color_constants.dart';
 import 'package:work_record_app/constants/style_constants.dart';
 import 'package:work_record_app/extension/extension.dart';

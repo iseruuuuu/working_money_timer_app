@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:work_record_app/admob/admob_banner.dart';
 
 // Project imports:
+import 'package:work_record_app/admob/admob_banner.dart';
 import 'package:work_record_app/constants/color_constants.dart';
 import 'package:work_record_app/constants/style_constants.dart';
 import 'package:work_record_app/extension/extension.dart';

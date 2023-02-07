@@ -1,16 +1,17 @@
-// Flutter imports:
+// Dart imports:
 import 'dart:convert';
 
-import 'package:app_tracking_transparency/app_tracking_transparency.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_picker/picker.dart';
 
 // Package imports:
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
+import 'package:flutter_picker/picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:work_record_app/admob/admob_interstitial.dart';
-import 'package:work_record_app/constants/picker_constants.dart';
 
 // Project imports:
+import 'package:work_record_app/admob/admob_interstitial.dart';
+import 'package:work_record_app/constants/picker_constants.dart';
 import 'package:work_record_app/l10n/l10n.dart';
 import 'package:work_record_app/screen/timer/timer_screen.dart';
 import 'package:work_record_app/screen/timer_set/timer_set_screen_state.dart';
