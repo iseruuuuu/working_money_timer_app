@@ -23,7 +23,6 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
     DatePicker.showTime12hPicker(
       context,
       onConfirm: (date) {
-        print(date);
         state = state.copyWith(
           workingSetTime: TimeOfDay(
             hour: date.hour,
