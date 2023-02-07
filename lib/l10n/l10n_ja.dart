@@ -26,11 +26,29 @@ class L10nJa extends L10n {
   String get snack_bar => '労働時間または時給を入力してください。';
 
   @override
-  String get picker_title => '労働時間の設定';
+  String get pickerTitle => '労働時間の設定';
 
   @override
-  String get picker_cancel => 'キャンセル';
+  String get pickerCancel => 'キャンセル';
 
   @override
-  String get picker_confirm => '設定';
+  String get pickerConfirm => '設定';
+
+  @override
+  String get timerRemainWorking => '労働残り時間';
+
+  @override
+  String get timerWorking => '働いた時間';
+
+  @override
+  String get timerEarn => '稼いだ額';
+
+  @override
+  String get timerPrice => '円';
+
+  @override
+  String get timerStart => 'スタート';
+
+  @override
+  String get timerStop => 'ストップ';
 }

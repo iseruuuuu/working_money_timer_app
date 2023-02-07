@@ -135,23 +135,59 @@ abstract class L10n {
   /// **'労働時間または時給を入力してください。'**
   String get snack_bar;
 
-  /// No description provided for @picker_title.
+  /// No description provided for @pickerTitle.
   ///
   /// In ja, this message translates to:
   /// **'労働時間の設定'**
-  String get picker_title;
+  String get pickerTitle;
 
-  /// No description provided for @picker_cancel.
+  /// No description provided for @pickerCancel.
   ///
   /// In ja, this message translates to:
   /// **'キャンセル'**
-  String get picker_cancel;
+  String get pickerCancel;
 
-  /// No description provided for @picker_confirm.
+  /// No description provided for @pickerConfirm.
   ///
   /// In ja, this message translates to:
   /// **'設定'**
-  String get picker_confirm;
+  String get pickerConfirm;
+
+  /// No description provided for @timerRemainWorking.
+  ///
+  /// In ja, this message translates to:
+  /// **'労働残り時間'**
+  String get timerRemainWorking;
+
+  /// No description provided for @timerWorking.
+  ///
+  /// In ja, this message translates to:
+  /// **'働いた時間'**
+  String get timerWorking;
+
+  /// No description provided for @timerEarn.
+  ///
+  /// In ja, this message translates to:
+  /// **'稼いだ額'**
+  String get timerEarn;
+
+  /// No description provided for @timerPrice.
+  ///
+  /// In ja, this message translates to:
+  /// **'円'**
+  String get timerPrice;
+
+  /// No description provided for @timerStart.
+  ///
+  /// In ja, this message translates to:
+  /// **'スタート'**
+  String get timerStart;
+
+  /// No description provided for @timerStop.
+  ///
+  /// In ja, this message translates to:
+  /// **'ストップ'**
+  String get timerStop;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

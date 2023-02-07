@@ -52,10 +52,10 @@ class TimerSetScreenStateNotifier extends StateNotifier<TimerSetScreenState> {
         isArray: true,
       ),
       hideHeader: true,
-      title: Center(child: Text(l10n.picker_title)),
+      title: Center(child: Text(l10n.pickerTitle)),
       //TODO ２つのボタンの位置を調整したい
-      cancelText: l10n.picker_cancel,
-      confirmText: l10n.picker_confirm,
+      cancelText: l10n.pickerCancel,
+      confirmText: l10n.pickerConfirm,
       onConfirm: (Picker picker, List value) {
         state = state.copyWith(
           workingSetTime: TimeOfDay(

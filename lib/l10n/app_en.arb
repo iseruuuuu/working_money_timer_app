@@ -7,7 +7,13 @@
   "hour": "oh",
   "minutes": "",
   "snack_bar": "Please enter working hours or hourly rate.",
-  "picker_title":"Select Working Time",
-  "picker_cancel":"Cancel",
-  "picker_confirm":"OK"
+  "pickerTitle":"Select Working Time",
+  "pickerCancel":"Cancel",
+  "pickerConfirm":"OK",
+  "timerRemainWorking":"Remaining Working Hours",
+  "timerWorking":"Working Hours",
+  "timerEarn":"Salary",
+  "timerPrice":"$",
+  "timerStart": "START",
+  "timerStop":"STOP"
 }

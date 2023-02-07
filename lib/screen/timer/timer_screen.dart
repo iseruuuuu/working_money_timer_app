@@ -12,6 +12,7 @@ import 'package:work_record_app/admob/admob_banner.dart';
 import 'package:work_record_app/constants/color_constants.dart';
 import 'package:work_record_app/constants/style_constants.dart';
 import 'package:work_record_app/extension/extension.dart';
+import 'package:work_record_app/l10n/l10n.dart';
 
 class TimerScreen extends StatefulWidget {
   const TimerScreen({
@@ -110,6 +111,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context)!;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorConstants.appBarColor,
@@ -119,8 +121,10 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 30),
-            //TODO  多言語対応をする
-            child: Text('労働残り時間', style: StyleConstants.timerLabel),
+            child: Text(
+              l10n.timerRemainWorking,
+              style: StyleConstants.timerLabel,
+            ),
           ),
           StreamBuilder<int>(
             stream: countDownTimer.rawTime,
@@ -144,8 +148,10 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30),
-            //TODO  多言語対応をする
-            child: Text('働いた時間', style: StyleConstants.timerLabel),
+            child: Text(
+              l10n.timerWorking,
+              style: StyleConstants.timerLabel,
+            ),
           ),
           StreamBuilder<int>(
             stream: countUpTimer.rawTime,
@@ -169,10 +175,15 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30),
-            //TODO  多言語対応をする
-            child: Text('稼いだ額', style: StyleConstants.timerLabel),
+            child: Text(
+              l10n.timerEarn,
+              style: StyleConstants.timerLabel,
+            ),
           ),
-          Text('$workingPrice円', style: StyleConstants.timerLabel),
+          Text(
+            '$workingPrice${l10n.timerPrice}',
+            style: StyleConstants.timerLabel,
+          ),
           const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -184,8 +195,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
                   style: StyleConstants.timerButtonStyle,
                   onPressed: start,
                   child: Text(
-                    //TODO  多言語対応をする
-                    'START',
+                    l10n.timerStart,
                     style: StyleConstants.timerButton,
                   ),
                 ),
@@ -197,8 +207,7 @@ class _TimerScreenState extends State<TimerScreen> with WidgetsBindingObserver {
                   style: StyleConstants.timerButtonStyle,
                   onPressed: stop,
                   child: Text(
-                    //TODO  多言語対応をする
-                    'STOP',
+                    l10n.timerStop,
                     style: StyleConstants.timerButton,
                   ),
                 ),

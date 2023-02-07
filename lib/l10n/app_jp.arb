@@ -7,7 +7,13 @@
   "hour": "時",
   "minutes": "分",
   "snack_bar": "労働時間または時給を入力してください。",
-  "picker_title":"労働時間の設定",
-  "picker_cancel":"キャンセル",
-  "picker_confirm":"設定"
+  "pickerTitle":"労働時間の設定",
+  "pickerCancel":"キャンセル",
+  "pickerConfirm":"設定",
+  "timerRemainWorking":"労働残り時間",
+  "timerWorking":"働いた時間",
+  "timerEarn":"稼いだ額",
+  "timerPrice":"円",
+  "timerStart": "スタート",
+  "timerStop":"ストップ"
 }
