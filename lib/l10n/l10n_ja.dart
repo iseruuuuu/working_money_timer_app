@@ -1,4 +1,3 @@
-// Project imports:
 import 'l10n.dart';
 
 /// The translations for Japanese (`ja`).
@@ -18,7 +17,7 @@ class L10nJa extends L10n {
   String get timerSetStart => 'スタート';
 
   @override
-  String get hour => '時';
+  String get hour => '時間';
 
   @override
   String get minutes => '分';

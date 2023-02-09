@@ -1,15 +1,10 @@
-// Dart imports:
 import 'dart:async';
 
-// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-
-// Package imports:
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-// Project imports:
 import 'l10n_en.dart';
 import 'l10n_ja.dart';
 
@@ -125,7 +120,7 @@ abstract class L10n {
   /// No description provided for @hour.
   ///
   /// In ja, this message translates to:
-  /// **'時'**
+  /// **'時間'**
   String get hour;
 
   /// No description provided for @minutes.

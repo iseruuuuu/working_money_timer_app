@@ -4,7 +4,7 @@
   "timerSetWorkTime" : "設定時間",
   "timerSetWorkPrice" : "時給",
   "timerSetStart" : "スタート",
-  "hour": "時",
+  "hour": "時間",
   "minutes": "分",
   "snack_bar": "労働時間または時給を入力してください。",
   "pickerTitle":"労働時間の設定",
