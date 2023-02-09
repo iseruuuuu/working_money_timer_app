@@ -8,7 +8,7 @@ class L10nEn extends L10n {
   String get timerSetAppBar => 'WorkingTimer';
 
   @override
-  String get timerSetWorkTime => 'SettingTime';
+  String get timerSetWorkTime => 'Working Time';
 
   @override
   String get timerSetWorkPrice => 'Hourly wage';
