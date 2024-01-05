@@ -8,6 +8,8 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 	<string>秒給タイマー</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>実機テストの為、ローカルネットワークの接続を許可する。</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -19,7 +21,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3471170179614589~1418225544</string>
+	<string>ca-app-pub-7351916034532025~9534327202</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>取得したトラッキングデータをお客様に合わせたご提案等のサービスの改善や広告配信、広告効果測定を目的として分析・使用させていただきます。</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -30,9 +32,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.03</string>
+	<string>1.04</string>
 	<key>CFBundleVersion</key>
-	<string>1.03</string>
+	<string>1.04</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
